@@ -34,16 +34,20 @@ useEffect(() => {
       {isEditing ? (
         <textarea 
         defaultValue={recipe.description}></textarea>
-      ) : (
-        <div>{recipe.description}</div>
+      ) : ( recipe.id ? (
+              <div>{recipe.description}</div>
+              ) : (<div>Please select a recipe from the list.</div>
+            )
       )}
       {isEditing ? (
         <div>
           <button onClick={handleSaveClick}>Save</button>
           <button onClick={handleCancelClick}>Cancel</button>
         </div>
-      ) : (
-        <button onClick={handleEditClick}>Edit</button>
+      ) : ( recipe.id ? (
+              <button onClick={handleEditClick}>Edit</button>
+              ) : (null
+            )
       )}  
     </div>     
   );
