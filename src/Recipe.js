@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 function Recipe(props) {
   const [recipe, setRecipe] = useState([]);
-
   const [isEditing, setIsEditing] = useState(false);
   
   const handleEditClick = () => {
@@ -23,10 +22,11 @@ useEffect(() => {
     const data = await response.json();
     setRecipe(data);
   }
-
+  if(props.recipe){
     fetchData()
-    .catch(console.error);
-  });
+      .catch(console.error)
+  }
+  },[props.recipe]);
 
   return (
     <div>
