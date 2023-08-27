@@ -16,18 +16,18 @@ function Recipe(props) {
   const handleCancelClick = () => {
     setIsEditing(false);
   };
-  
-  useEffect(() => {
-    fetch(`http://localhost:3000/recipe/${props.recipe}`, {
-      method: "GET",
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      setRecipe(data);
-    })
-      .catch((error) => console.log(error));
-  }, [props.recipe]);
-  console.log("Recipe" + JSON.stringify(recipe));
+
+useEffect(() => {
+  const fetchData = async () => {
+    const response = await fetch(`http://localhost:3000/recipe/${props.recipe}`);
+    const data = await response.json();
+    setRecipe(data);
+  }
+
+    fetchData()
+    .catch(console.error);
+  });
+
   return (
     <div>
       <h2>Recipe:</h2>
