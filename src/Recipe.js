@@ -32,6 +32,16 @@ useEffect(() => {
     <div>
       <h2>Recipe:</h2>
       {isEditing ? (
+        <input defaultValue = {recipe.name}></input>
+      ) : ( 
+          recipe.id ? (
+            <h3>{recipe.name}</h3>
+          ) : ( null
+        )
+      )
+      }
+
+      {isEditing ? (
         <textarea 
         defaultValue={recipe.description}></textarea>
       ) : ( recipe.id ? (
