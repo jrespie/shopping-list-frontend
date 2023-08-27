@@ -5,17 +5,17 @@ function RecipeList() {
   const [recipeList, setRecipeList] = useState([]);
   const [selectedItem, setSelectedItem] = useState();
   useEffect(() => {
-    fetch("http://localhost:3000/recipe", {
-      method: "GET",
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      setRecipeList(data.recipes);
-      console.log(data);
-    })
-      .catch((error) => console.log(error));
-  }, []);
+  const fetchData = async () => {
+    const response = await fetch(`http://localhost:3000/recipe`);
+    const data = await response.json();
+    setRecipeList(data.recipes);
+  }
+
+    fetchData()
+    .catch(console.error);
+  },[]);
   console.log(recipeList)
+  
 
   const handleItemClick = (index) => {
     setSelectedItem(index);
