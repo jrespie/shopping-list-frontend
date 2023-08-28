@@ -23,13 +23,13 @@ function RecipeList() {
   
   return (
     <div>
-      <div className="RecipeList" class="container">
-        <div class="row">
-          <div class="col-sm-6">
+      <div className="RecipeList container">
+        <div className="row">
+          <div className="col-sm-6">
             <h2>Recipe List:</h2>
-            <ul class="list-group">
+            <ul className="list-group">
               {recipeList.map(recipe => (
-                <li class="list-group-item" 
+                <li className="list-group-item" 
                   onClick={() => handleItemClick(recipe.id)}
                   style={{
                     backgroundColor: selectedItem === recipe.id ? 'yellow' : 'white',
@@ -42,7 +42,7 @@ function RecipeList() {
             </ul>
             {console.log("selected Item: "+ selectedItem)}
           </div>
-          <div class="col-sm-6">
+          <div className="col-sm-6">
             <Recipe recipe={selectedItem} key={selectedItem}></Recipe>
           </div>
         </div>
