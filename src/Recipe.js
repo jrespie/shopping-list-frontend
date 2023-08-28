@@ -9,6 +9,21 @@ function Recipe(props) {
   };
 
   const handleSaveClick = () => {
+    const newRecipeName = document.getElementById("recipeNameInput").value;
+    console.log("new recipe name: " + newRecipeName);
+    const fetchData = async () => {
+      await fetch(`http://localhost:3000/recipe/${props.recipe}`,{
+        method: 'PATCH',
+        body: JSON.stringify({
+          "name": `${newRecipeName}`
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        }
+      })
+    }
+    fetchData()
+      .catch(console.error)
     setIsEditing(false);
   };
 
@@ -32,7 +47,7 @@ useEffect(() => {
     <div>
       <h2>Recipe:</h2>
       {isEditing ? (
-        <input defaultValue = {recipe.name}></input>
+        <input id="recipeNameInput" type="text" defaultValue = {recipe.name}></input>
       ) : ( 
           recipe.id ? (
             <h3>{recipe.name}</h3>
