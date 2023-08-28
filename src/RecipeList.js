@@ -13,9 +13,7 @@ function RecipeList() {
 
     fetchData()
     .catch(console.error);
-  },[]);
-  console.log(recipeList)
-  
+  },[]);  
 
   const handleItemClick = (index) => {
     setSelectedItem(index);
@@ -40,7 +38,6 @@ function RecipeList() {
                   </li>
                 ))}
             </ul>
-            {console.log("selected Item: "+ selectedItem)}
           </div>
           <div className="col-sm-6">
             <Recipe recipe={selectedItem} key={selectedItem}></Recipe>
