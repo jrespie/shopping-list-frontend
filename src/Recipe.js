@@ -10,7 +10,6 @@ function Recipe(props) {
 
   const handleSaveClick = () => {
     const newRecipeName = document.getElementById("recipeNameInput").value;
-    console.log("new recipe name: " + newRecipeName);
     const fetchData = async () => {
       await fetch(`http://localhost:3000/recipe/${props.recipe}`,{
         method: 'PATCH',
