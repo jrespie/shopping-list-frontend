@@ -45,10 +45,10 @@ useEffect(() => {
   },[props.recipe]);
 
   return (
-    <div>
+    <div className="h-100">
       <h2>Recipe:</h2>
       {isEditing ? (
-        <input id="recipeNameInput" type="text" defaultValue = {recipe.name}></input>
+        <input id="recipeNameInput" type="text" className="form-control" defaultValue = {recipe.name}></input>
       ) : ( 
           recipe.id ? (
             <h3>{recipe.name}</h3>
@@ -58,7 +58,7 @@ useEffect(() => {
       }
 
       {isEditing ? (
-        <textarea 
+        <textarea className="form-control flex-grow-1"
         defaultValue={recipe.description}></textarea>
       ) : ( recipe.id ? (
               <div>{recipe.description}</div>
