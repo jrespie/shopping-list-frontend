@@ -9,7 +9,23 @@ function Recipe(props) {
   };
 
   const handleSaveClick = () => {
+    const newRecipeName = document.getElementById("recipeNameInput").value;
+    const fetchData = async () => {
+      await fetch(`http://localhost:3000/recipe/${props.recipe}`,{
+        method: 'PATCH',
+        body: JSON.stringify({
+          "name": `${newRecipeName}`
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        }
+      })
+    }
+    fetchData()
+      .catch(console.error)
     setIsEditing(false);
+    recipe.name=newRecipeName;
+    props.onUpdate(newRecipeName);
   };
 
   const handleCancelClick = () => {

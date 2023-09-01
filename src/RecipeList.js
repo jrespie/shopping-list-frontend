@@ -13,13 +13,17 @@ function RecipeList() {
 
     fetchData()
     .catch(console.error);
-  },[]);
-  console.log(recipeList)
-  
+  },[]);  
 
   const handleItemClick = (index) => {
     setSelectedItem(index);
   };
+
+  const updateSelectedItemName = async (newName) => {
+    recipeList.find((recipe) => recipe.id===selectedItem).name=newName;
+    await setSelectedItem(null);
+    setSelectedItem(selectedItem);
+  }
   
   return (
     <div>
@@ -40,10 +44,9 @@ function RecipeList() {
                   </li>
                 ))}
             </ul>
-            {console.log("selected Item: "+ selectedItem)}
           </div>
           <div className="col-sm-6">
-            <Recipe recipe={selectedItem} key={selectedItem}></Recipe>
+            <Recipe recipe={selectedItem} key={selectedItem} onUpdate={updateSelectedItemName}></Recipe>
           </div>
         </div>
       </div>
