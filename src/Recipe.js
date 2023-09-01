@@ -25,6 +25,8 @@ function Recipe(props) {
     fetchData()
       .catch(console.error)
     setIsEditing(false);
+    recipe.name=newRecipeName;
+    props.onUpdate(newRecipeName);
   };
 
   const handleCancelClick = () => {
