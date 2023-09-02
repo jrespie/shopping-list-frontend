@@ -45,7 +45,7 @@ useEffect(() => {
   },[props.recipe]);
 
   return (
-    <div className="h-100">
+    <div className="h-100 flex-column row">
       <h2>Recipe:</h2>
       {isEditing ? (
         <input id="recipeNameInput" type="text" className="form-control" defaultValue = {recipe.name}></input>
@@ -61,17 +61,17 @@ useEffect(() => {
         <textarea className="form-control flex-grow-1"
         defaultValue={recipe.description}></textarea>
       ) : ( recipe.id ? (
-              <div>{recipe.description}</div>
+              <div className="flex-grow-1">{recipe.description}</div>
               ) : (<div>Please select a recipe from the list.</div>
             )
       )}
       {isEditing ? (
-        <div>
-          <button onClick={handleSaveClick}>Save</button>
-          <button onClick={handleCancelClick}>Cancel</button>
+        <div className="w-100">
+          <button className="btn input-block-level form-control" onClick={handleSaveClick}>Save</button>
+          <button className="btn input-block-level form-control" onClick={handleCancelClick}>Cancel</button>
         </div>
       ) : ( recipe.id ? (
-              <button onClick={handleEditClick}>Edit</button>
+              <button className="btn input-block-level form-control" onClick={handleEditClick}>Edit</button>
               ) : (null
             )
       )}  
