@@ -48,10 +48,10 @@ useEffect(() => {
     <div className="h-100 flex-column row">
       <h2>Recipe:</h2>
       {isEditing ? (
-        <input id="recipeNameInput" type="text" className="form-control" defaultValue = {recipe.name}></input>
+        <input id="recipeNameInput" type="text" className="form-control editable-title" defaultValue = {recipe.name}></input>
       ) : ( 
           recipe.id ? (
-            <h3>{recipe.name}</h3>
+            <h3 className="title">{recipe.name}</h3>
           ) : ( null
         )
       )
