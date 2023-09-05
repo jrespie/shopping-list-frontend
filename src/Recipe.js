@@ -58,7 +58,7 @@ useEffect(() => {
       }
 
       {isEditing ? (
-        <textarea className="form-control flex-grow-1"
+        <textarea id="recipe-description-textarea" className="form-control flex-grow-1 editable-textarea"
         defaultValue={recipe.description}></textarea>
       ) : ( recipe.id ? (
               <div className="flex-grow-1">{recipe.description}</div>

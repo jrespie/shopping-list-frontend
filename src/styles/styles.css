@@ -19,8 +19,17 @@
   margin-bottom: 0.5rem;
   text-align: center;
 }
+
 @media (min-width: 1200px) {
   .editable-title {
     font-size: 1.75rem;
   }
+}
+
+.editable-textarea {
+  background-color: lightyellow;
+  border: none;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  padding: 0px;
 }
