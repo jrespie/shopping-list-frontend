@@ -19,3 +19,8 @@
   margin-bottom: 0.5rem;
   text-align: center;
 }
+@media (min-width: 1200px) {
+  .editable-title {
+    font-size: 1.75rem;
+  }
+}
