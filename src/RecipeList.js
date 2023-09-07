@@ -36,7 +36,7 @@ function RecipeList() {
                 <li className="list-group-item" 
                   onClick={() => handleItemClick(recipe.id)}
                   style={{
-                    backgroundColor: selectedItem === recipe.id ? 'yellow' : 'white',
+                    backgroundColor: selectedItem === recipe.id ? 'yellow' : '',
                     cursor: 'pointer',
                   }}
                   key={recipe.id}>

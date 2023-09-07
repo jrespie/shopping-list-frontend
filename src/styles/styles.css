@@ -1,8 +1,11 @@
 .list-group-item {
-    border-color: black;
-    border-radius: 24px !important;
-    border-width: 1px !important;
-    margin: 4px;
+  border-color: black;
+  border-radius: 24px !important;
+  border-width: 1px !important;
+  margin: 4px;
+}
+.list-group-item:hover {    
+  background-color: lightgoldenrodyellow;
 }
 
 .btn {
@@ -10,6 +13,10 @@
   border-radius: 24px !important;
   border-width: 1px !important;
   margin: 4px;
+}
+.btn:hover {
+  background-color: lightgoldenrodyellow;
+  border-color: black
 }
 
 .title {
