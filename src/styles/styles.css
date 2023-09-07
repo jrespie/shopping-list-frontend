@@ -1,0 +1,48 @@
+.list-group-item {
+  border-color: black;
+  border-radius: 24px !important;
+  border-width: 1px !important;
+  margin: 4px;
+}
+.list-group-item:hover {    
+  background-color: lightgoldenrodyellow;
+}
+
+.btn {
+  border-color: black;
+  border-radius: 24px !important;
+  border-width: 1px !important;
+  margin: 4px;
+}
+.btn:hover {
+  background-color: lightgoldenrodyellow;
+  border-color: black
+}
+
+.title {
+  padding:0.375rem;
+}
+
+.editable-title {
+  background-color: lightyellow;
+  border: none;
+  font-size: calc(1.3rem + .6vw);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+@media (min-width: 1200px) {
+  .editable-title {
+    font-size: 1.75rem;
+  }
+}
+
+.editable-textarea {
+  background-color: lightyellow;
+  border: none;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  padding: 0px;
+}

@@ -9,7 +9,7 @@ function Recipe(props) {
   };
 
   const handleSaveClick = () => {
-    const newRecipeName = document.getElementById("recipeNameInput").value;
+    const newRecipeName = document.getElementById("recipe-name-input").value;
     const fetchData = async () => {
       await fetch(`http://localhost:3000/recipe/${props.recipe}`,{
         method: 'PATCH',
@@ -48,17 +48,17 @@ useEffect(() => {
     <div className="h-100 flex-column row">
       <h2>Recipe:</h2>
       {isEditing ? (
-        <input id="recipeNameInput" type="text" className="form-control" defaultValue = {recipe.name}></input>
+        <input id="recipe-name-input" type="text" className="form-control editable-title" defaultValue = {recipe.name}></input>
       ) : ( 
           recipe.id ? (
-            <h3>{recipe.name}</h3>
+            <h3 className="title">{recipe.name}</h3>
           ) : ( null
         )
       )
       }
 
       {isEditing ? (
-        <textarea className="form-control flex-grow-1"
+        <textarea id="recipe-description-textarea" className="form-control flex-grow-1 editable-textarea"
         defaultValue={recipe.description}></textarea>
       ) : ( recipe.id ? (
               <div className="flex-grow-1">{recipe.description}</div>
