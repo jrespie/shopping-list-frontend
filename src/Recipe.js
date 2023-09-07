@@ -10,11 +10,13 @@ function Recipe(props) {
 
   const handleSaveClick = () => {
     const newRecipeName = document.getElementById("recipe-name-input").value;
+    const newRecipeDescription = document.getElementById("recipe-description-textarea").value;
     const fetchData = async () => {
       await fetch(`http://localhost:3000/recipe/${props.recipe}`,{
         method: 'PATCH',
         body: JSON.stringify({
-          "name": `${newRecipeName}`
+          "name": `${newRecipeName}`,
+          "description": `${newRecipeDescription}`
         }),
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
