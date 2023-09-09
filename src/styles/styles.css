@@ -46,3 +46,7 @@
   text-align: center;
   padding: 0px;
 }
+
+.recipe-description {
+  white-space: pre-wrap;
+}

@@ -63,7 +63,7 @@ useEffect(() => {
         <textarea id="recipe-description-textarea" className="form-control flex-grow-1 editable-textarea"
         defaultValue={recipe.description}></textarea>
       ) : ( recipe.id ? (
-              <div className="flex-grow-1">{recipe.description}</div>
+              <div className="flex-grow-1 recipe-description">{recipe.description}</div>
               ) : (<div>Please select a recipe from the list.</div>
             )
       )}
